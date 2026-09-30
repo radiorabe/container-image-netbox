@@ -1,6 +1,7 @@
 # RaBe NetBox Image
 
-> [!WARNING] The image and plugin versions used here are very outdated and should not be considered being put into production.
+> [!WARNING]
+> The image and plugin versions used here are very outdated and should not be considered being put into production.
 
 [NetBox Community](https://github.com/netbox-community/netbox) container image and plugins added.
 
