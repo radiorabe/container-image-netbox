@@ -1,0 +1,28 @@
+name: Release
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+    tags:
+      - '*'
+
+jobs:
+  release-container:
+    uses: radiorabe/actions/.github/workflows/release-container.yaml@c26933dd78f0f76b51d1e3bb80ac099bfe0ee89b # v0.45.0
+    with:
+      image: ghcr.io/radiorabe/netbox
+      name: netbox
+      display-name: RaBe NetBox
+      tags: ubuntu rabe netbox
+      cosign-image-skip-regexp: quay.io/netboxcommunity/netbox
+  release-mkdocs:
+    permissions:
+      contents: write # Required to push the gh-pages branch for documentation deployment
+    uses: radiorabe/actions/.github/workflows/release-mkdocs.yaml@c26933dd78f0f76b51d1e3bb80ac099bfe0ee89b # v0.45.0
+  github-actions:
+    permissions:
+      contents: read
+      security-events: write # so zizmor can publish results to the Security tab
+    uses: radiorabe/actions/.github/workflows/test-github-actions.yaml@c26933dd78f0f76b51d1e3bb80ac099bfe0ee89b # v0.45.0
