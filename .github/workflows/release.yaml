@@ -17,6 +17,7 @@ jobs:
       display-name: RaBe NetBox
       tags: ubuntu rabe netbox
       cosign-image-skip-regexp: quay.io/netboxcommunity/netbox
+      cosign-verify: false
   release-mkdocs:
     permissions:
       contents: write # Required to push the gh-pages branch for documentation deployment
