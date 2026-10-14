@@ -4,6 +4,10 @@ updates:
     directory: /
     schedule:
       interval: daily
+    ignore:
+      - dependency-name: quay.io/netboxcommunity/netbox
+        versions:
+          - "> 3.1.7"
     commit-message:
       prefix: "chore: "
     groups:
