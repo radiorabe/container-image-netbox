@@ -9,4 +9,4 @@ jobs:
   schedule-trivy:
     uses: radiorabe/actions/.github/workflows/schedule-trivy.yaml@6373540d4ab86c4ce044b6a67e96aecddf22c7c9 # v0.45.1
     with:
-      image-ref: 'ghcr.io/radiorabe/netbox:latest'
+      image-ref: 'ghcr.io/radiorabe/netbox-v3.1.7:latest'

@@ -12,11 +12,11 @@ jobs:
   release-container:
     uses: radiorabe/actions/.github/workflows/release-container.yaml@6373540d4ab86c4ce044b6a67e96aecddf22c7c9 # v0.45.1
     with:
-      image: ghcr.io/radiorabe/netbox
-      name: netbox
+      image: ghcr.io/radiorabe/netbox-v3.1.7
+      name: netbox-v3.1.7
       display-name: RaBe NetBox
       tags: ubuntu rabe netbox
-      cosign-image-skip-regexp: quay.io/netboxcommunity/netbox
+      # cosign-image-skip-regexp: quay.io/netboxcommunity/netbox
       cosign-verify: false
   release-mkdocs:
     permissions:
