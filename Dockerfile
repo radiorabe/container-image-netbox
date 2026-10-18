@@ -11,3 +11,5 @@ RUN sed -i 's/PLUGINS\s=.*/PLUGINS = \["netbox_topology_views"\]/' /etc/netbox/c
 
 RUN DEBUG="true" SECRET_KEY="dummydummydummydummydummydummydummydummydummydummy" \
     /opt/netbox/venv/bin/python /opt/netbox/netbox/manage.py collectstatic --no-input
+
+COPY --chmod=755 launch-netbox.sh /opt/netbox/launch-netbox.sh
