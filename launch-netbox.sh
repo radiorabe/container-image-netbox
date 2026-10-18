@@ -23,8 +23,10 @@ load_configuration() {
   # this curl call will get a reply once unit is fully launched
   curl --silent --output /dev/null --request GET --unix-socket $UNIT_SOCKET http://localhost/
 
-  if [ -f "$UNIT_SSL_BUNDLE" ]; then
+  if [ -f "$UNIT_SSL_BUNDLE" ] &&
+    ! diff -q "$UNIT_SSL_BUNDLE" /opt/unit/state/certs/netbox_bundle; then
     echo "🔑 Loading Unit SSL bundle from $UNIT_SSL_BUNDLE"
+    rm -f /opt/unit/state/certs/netbox_bundle
     RESP_CODE=$(
       curl \
         --silent \
